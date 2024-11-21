@@ -1,0 +1,1181 @@
+/* General reset for margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Sets default font for the page */
+    line-height: 1.6; /* Adds some space between lines for better readability */
+    background-color: #f4f4f4; /* Light gray background color */
+    color: #333; /* Dark text color */
+    scroll-behavior: smooth; /* Enables smooth scrolling behavior */
+}
+
+/* Header styling */
+header {
+    position: sticky; /* Makes the header stick to the top of the page when scrolling */
+    top: 0; /* The header stays at the top */
+    width: 100%; /* Full width of the page */
+    background: #4F4F4F; /* Dark gray background for the header */
+    color: #fff; /* White text color */
+    z-index: 1000; /* Ensures the header stays above other elements when scrolling */
+    padding: 10px 0; /* Vertical padding for some space inside the header */
+}
+
+/* Header content layout */
+.header {
+    display: flex; /* Flexbox for layout control */
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Vertically centers items within the header */
+}
+
+/* Logo section */
+.logo {
+    display: flex; /* Aligns logo image and text horizontally */
+    align-items: center; /* Vertically centers the logo items */
+}
+
+/* Removes margin-right from logo anchor */
+.logo a {
+    margin-right: 10px; /* Adds space between logo text/link and the image */
+}
+
+/* Logo image styling */
+.logo img {
+    height: 50px; /* Sets the height of the logo image */
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none; /* Removes default bullet points from list */
+    display: flex; /* Horizontal layout for navigation items */
+    justify-content: flex-end; /* Pushes the navigation to the right */
+}
+
+/* Default styling for desktop (navigation in header) */
+.main-nav {
+    display: none;
+}
+
+.main-nav.active {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    background-color: #444; /* Background color for mobile nav */
+    width: 100%;
+    position: absolute;
+    top: 80px; /* Below header */
+    left: 0;
+    padding: 10px;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+}
+
+.main-nav a:hover{
+    color: rgba(219, 199, 191, 0.473);
+}
+
+/* Styling for the hamburger icon (only for mobile view) */
+.breadcrumb-icon {
+    display: none; /* Hide on desktop */
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 10px;
+}
+
+/* Mobile Navigation - Hidden by default, will show on toggle */
+.main-nav.active {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hero section with flexbox layout and background image */
+.hero {
+    display: flex; /* Flexbox layout for left and right sections */
+    height: 100vh; /* Full viewport height */
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: linear-gradient(45deg, rgba(255, 100, 100, 0.7), rgba(0, 0, 0, 0.5)), url('img/DIH1.jpg') no-repeat center center/cover;
+    /* Adds a gradient overlay on top of the background image */
+}
+
+/* Text content on the left side of the hero section */
+.text-content {
+    flex: 1; /* Takes up equal space as the image container */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Aligns text vertically */
+    justify-content: center; /* Centers text vertically */
+    text-align: left;
+    color: white;
+    z-index: 2; /* Ensures text is above the background */
+}
+
+/* Hero heading styling */
+.text-content h1 {
+    font-size: 50px; /* Large font size for the main heading */
+    color: #916868; /* Custom color for heading text */
+    font-family: 'Georgia', serif; /* Serif font for the heading */
+}
+
+/* Hero paragraph styling */
+.text-content p {
+    font-size: 30px; /* Slightly smaller font for paragraph */
+    color: #fff; /* White color for paragraph text */
+    margin-top: 15px; /* Space between heading and paragraph */
+}
+
+/* Truncation for long text */
+.truncate {
+    width: 300px;
+    white-space: normal; /* Allows line wrapping */
+    word-wrap: break-word; /* Breaks long words into new lines */
+}
+
+/* Image container on the right side of the hero section */
+.image-container {
+    flex: 1; /* Takes up equal space as the text content */
+    height: 100%; /* Full height of the hero section */
+    background-image: url('img/DIH1.jpg'); /* Background image for the container */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center center; /* Centers the image within the container */
+    border-radius: 10px; /* Rounds the corners of the image container */
+}
+
+/* Section padding for spacing */
+section {
+    padding: 50px 20px; /* Adds padding to section content */
+}
+
+/* Container for individual sections (con-1 and con-2) */
+.container {
+    display: flex; /* Flexbox for layout control */
+    justify-content: space-around; /* Evenly spaces the sections */
+    align-items: center; /* Aligns the sections vertically */
+    gap: 40px; /* Adds space between the sections */
+    padding: 50px 20px; /* Adds padding inside the container */
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0); /* Light gradient background */
+    border-radius: 10px; /* Rounds container corners */
+    margin-top: 30px; /* Adds space above the container */
+}
+
+/* Styling for individual sections (.con-1 and .con-2) */
+.con-1, .con-2 {
+    padding: 30px;
+    border-radius: 12px; /* Rounds the corners of the sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    flex: 1; /* Ensures both sections take up equal space */
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+    justify-content: center; /* Centers content vertically */
+    text-align: center; /* Centers text horizontally */
+}
+
+/* Background and color settings for section 1 */
+.con-1 {
+    background: linear-gradient(145deg, #916868, #4F4F4F); /* Gradient background */
+    color: white;
+}
+
+/* Background and color settings for section 2 */
+.con-2 {
+    background: linear-gradient(145deg, #4F4F4F, #916868); /* Gradient background */
+    color: white;
+}
+
+/* Heading styling for both sections */
+.con-1 h2, .con-2 h2 {
+    font-size: 28px;
+    font-weight: bold; /* Bold headings */
+    margin-bottom: 15px;
+    color: #fff; /* White text for headings */
+    text-transform: uppercase; /* Uppercase letters for headings */
+    letter-spacing: 2px; /* Adds spacing between letters */
+}
+
+/* Paragraph styling for both sections */
+.con-1 p, .con-2 p {
+    font-size: 18px; /* Font size for paragraph text */
+    line-height: 1.6; /* Spacing between lines */
+    color: #fff; /* White text color */
+    font-weight: 300; /* Lighter font weight */
+}
+
+/* Section for about content with padding and background */
+.about-2 {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f4f4f4; /* Light gray background for the section */
+}
+
+/* Styling for the heading in about section */
+.about-2 h2 {
+    font-size: 36px; /* Large font size for the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #333; /* Dark color for the heading text */
+    text-transform: uppercase; /* Makes the text uppercase */
+    letter-spacing: 2px; /* Spacing between the letters */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Padding at the bottom of the heading */
+}
+
+/* Adds an underline effect below the heading */
+.about-2 h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #916868; /* Color for the underline */
+    border-radius: 5px;
+}
+
+/* Flexbox layout for mission and vision sections */
+.about-section {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between mission and vision */
+    gap: 20px; /* Space between the two sections */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    margin-top: 40px; /* Space above the section */
+}
+
+/* Common styles for mission and vision sections */
+.mission, .vision {
+    flex: 1; /* Both sections take up equal space */
+    padding: 20px; /* Padding inside the sections */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow */
+    background-image: linear-gradient(45deg, rgba(79, 79, 79, 0.8), rgba(0, 0, 0, 0.5)); /* Background gradient */
+    color: white; /* White text color */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Specific background color for mission section */
+.mission {
+    background-color: #4F4F4F; /* Dark gray background */
+}
+
+/* Specific background color for vision section */
+.vision {
+    background-color: #916868; /* Reddish-brown background */
+}
+
+
+/* Icon styling inside mission and vision sections */
+.mission .icon, .vision .icon {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px; /* Large icon size */
+    color: white; /* White icon color */
+    opacity: 0.2; /* transparent */
+}
+
+/* Heading styling for mission and vision sections */
+.mission h3, .vision h3 {
+    font-size: 28px; /* Large font size for headings */
+    margin-bottom: 10px; /* Space below the heading */
+    color: #fff; /* White text color */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+/* Paragraph styling for mission and vision sections */
+.mission p, .vision p {
+    font-size: 16px; /* Standard font size for paragraphs */
+    color: #fff; /* White text color */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Adds a line below the heading in mission and vision */
+.mission h3::after, .vision h3::after {
+    content: '';
+    display: block;
+    width: 50px; /* Width of the underline */
+    height: 3px; /* Height of the underline */
+    margin-top: 5px;
+    background-color: #fff; /* White underline */
+    border-radius: 3px; /* Rounded corners for the line */
+}
+
+/* Adds margin to the paragraphs in mission and vision */
+.mission p, .vision p {
+    margin-top: 15px;
+}
+
+/* Styling for the third about section */
+.about-3 {
+    background-color: #f4f4f4; /* Light background for the section */
+    border-radius: 10px; /* Rounded corners for the whole section */
+    padding: 30px; /* Padding inside the section */
+    text-align: center; /* Centered text */
+    margin-top: 20px; /* Space above the section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading styling for the third about section */
+.about-3 h2 {
+    font-size: 30px; /* Large font size */
+    text-align: center; /* Centered heading */
+    color: #916868; /* Reddish-brown text color */
+    margin-bottom: 20px; /* Space below the heading */
+    text-transform: uppercase;
+}
+
+/* Sub-heading styling for the third about section */
+.about-3 h3 {
+    text-align: center; /* Centered sub-heading */
+    font-size: 28px; /* Large font size */
+    color: #4F4F4F; /* Dark gray color */
+    margin-bottom: 30px; /* Space below the sub-heading */
+    font-weight: bold;
+}
+
+/* Flexbox layout for core values */
+.core-value {
+    display: flex;
+    align-items: flex-start; /* Aligns content to the top */
+    background-color: #916868; /* Background color for each value */
+    padding: 10px; /* Padding inside the core value boxes */
+    margin-bottom: 15px; /* Spacing between each core value */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Styling for core value heading */
+.core-value h4 {
+    color: #fff; /* White text color */
+    font-size: 22px; /* Larger font size for heading */
+    margin-right: 10px; /* Space to the right of the heading */
+    min-width: 40px; /* Ensures consistent space for headings */
+}
+
+/* Styling for the core value description */
+.core-value span {
+    font-size: 18px; /* Font size for description */
+    color: #f4f4f4; /* Light text color */
+}
+
+/* Flex container for the two columns in the services-programs section */
+.services-programs {
+    display: flex; /* Flexbox layout for columns */
+    justify-content: space-around; /* Space out the columns evenly */
+    align-items: flex-start; /* Align items to the top of the container */
+    padding: 40px 0; /* Vertical padding for the section */
+}
+
+/* Styling for the header in the services-programs section */
+.services h3 {
+    font-size: 28px; /* Large font size for better readability */
+    text-align: center; /* Center align the header text */
+    color: #4F4F4F; /* Dark text color matching previous sections */
+    background-color: #f0e5e5; /* Light background color for contrast */
+    padding: 15px; /* Padding around the text for spacing */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    margin-bottom: 30px; /* Space below the header */
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Slight letter spacing for readability */
+}
+
+/* Styling for the ordered list in services-programs section */
+.services-programs ol {
+    list-style: inside; /* Use inside list style (no bullet) */
+    padding-left: 0; /* Remove left padding */
+    max-width: 400px; /* Set maximum width for the list */
+    background-color: #f8f9fa; /* Light gray background for the list container */
+    border-radius: 10px; /* Rounded corners for a smooth appearance */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow effect for depth */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+/* Styling for the heading of each list section */
+.services-programs p {
+    position: relative; /* Position for the star to be added */
+    font-size: 20px; /* Larger font size for the heading */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 10px; /* Space below the heading */
+    padding: 10px; /* Padding inside the heading */
+    background-color: #4F4F4F; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    border-radius: 8px 8px 0 0; /* Rounded corners at the top */
+}
+
+/* Add an orange star icon before each title */
+.services-programs p::before {
+    content: "\2605"; /* Unicode character for the star symbol */
+    color: orange; /* Orange color for the star */
+    position: absolute; /* Absolute positioning to the left */
+    left: -30px; /* Position the star to the left of the text */
+    font-size: 24px; /* Large font size for the star */
+}
+
+/* Styling for the list items in services-programs */
+.services-programs li {
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 16px; /* Standard font size for readability */
+}
+
+/* Italicized subheading styling within services-programs */
+.services-programs p em {
+    font-style: italic; /* Italic style for emphasis */
+    font-size: 14px; /* Smaller font size for subheading */
+}
+
+/* Table section for services-programs */
+.services-table {
+    width: 100%; /* Full-width table */
+    margin: 40px 0; /* Vertical spacing around the table */
+}
+
+/* Header styling for the services table */
+.services-table h3 {
+    text-align: center; /* Center align the header */
+    font-size: 24px; /* Font size for the table header */
+    color: #4F4F4F; /* Matching previous color scheme */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+/* Table element styling */
+.services-table table {
+    width: 100%; /* Full-width table */
+    border-collapse: collapse; /* Collapsed borders for cleaner look */
+}
+
+/* Table header and data cell styling */
+.services-table th, .services-table td {
+    padding: 15px; /* Padding inside the table cells */
+    text-align: left; /* Left-align the text */
+    border: 1px solid #ccc; /* Border around cells */
+    vertical-align: top; /* Align text to the top */
+}
+
+/* Table header-specific styling */
+.services-table th {
+    background-color: #4F4F4F; /* Dark background for header */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold; /* Bold font for header */
+    font-size: 18px; /* Font size for header text */
+}
+
+/* Table data cell-specific styling */
+.services-table td {
+    background-color: #f0f0f0; /* Light gray background for table cells */
+}
+
+/* Unordered list inside the table cells */
+.services-table ul {
+    list-style-type: disc; /* Disc bullet points for the list */
+    padding-left: 20px; /* Left padding for the list */
+}
+
+/* Styling for bold text inside the table cells */
+.services-table strong {
+    display: block; /* Make the text block-level */
+    margin-bottom: 10px; /* Space below the bold text */
+    font-weight: bold; /* Bold styling */
+    color: #333; /* Dark color for emphasis */
+}
+
+/* News Feed Section Styling */
+.news {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.news h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #4F4F4F;
+    text-transform: uppercase;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.news-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.news-item h3 {
+    font-size: 22px;
+    color: #333;
+}
+
+.news-item p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.news-item .date {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+
+/* Team Section Styling */
+
+/* General heading (h2) styling for the section title */
+h2 {
+    display: block; /* Ensures h2 is a block element */
+    color: #1c3e50; /* Dark color for the heading text */
+    font-size: 2em; /* Large font size */
+    font-weight: bold; /* Makes the text bold */
+    text-align: center; /* Centers the heading text */
+    margin-bottom: 30px; /* Space below the heading */
+    position: relative; /* Allows positioning of the underline */
+}
+
+/* Underline effect for the heading (h2) */
+h2::after {
+    content: ""; /* Creates the underline as an empty content */
+    position: absolute; /* Absolute positioning to control placement */
+    bottom: -5px; /* Position the underline below the text */
+    left: 50%; /* Centers the underline horizontally */
+    transform: translateX(-50%); /* Centers the underline exactly */
+    height: 2px; /* Sets the height of the underline */
+    width: 50px; /* Sets the width of the underline */
+    background-color: #7cb342; /* Green underline color */
+}
+
+/* Container for team members (flexbox layout) */
+.team-container {
+    display: flex; /* Uses flexbox for layout */
+    gap: 20px; /* Adds space between team members */
+    justify-content: center; /* Centers the team members */
+    flex-wrap: wrap; /* Allows wrapping of members on smaller screens */
+    margin-top: 40px; /* Space between the heading and team members */
+}
+
+/* Styling for each individual team member */
+.team-member {
+    background-color: #ffffff; /* White background for each member card */
+    border-radius: 10px; /* Rounded corners for smooth look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centers the content inside the card */
+    padding: 20px; /* Adds padding inside the card */
+    width: 180px; /* Fixed width for each team member card */
+    /* Removed unnecessary transition animations */
+}
+
+/* Hover effect for team member (slight lift and deeper shadow) */
+.team-member:hover {
+    transform: translateY(-10px); /* Slight elevation on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepens shadow on hover */
+}
+
+/* Styling for team member images */
+.team-member img {
+    width: 100px; /* Fixed width for the image */
+    height: 100px; /* Fixed height for the image */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the full space */
+    margin-bottom: 10px; /* Space below the image */
+    border: 3px solid #7cb342; /* Green border around the image */
+}
+
+/* Styling for the name of each team member */
+.name {
+    font-size: 1.1em; /* Slightly larger font size */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #333; /* Dark color for the text */
+    margin: 10px 0 5px; /* Space around the name */
+    text-transform: uppercase; /* Uppercase for the name */
+}
+
+/* Styling for the position of each team member */
+.position {
+    font-size: 0.9em; /* Slightly smaller font size */
+    color: #666; /* Lighter gray color for the text */
+    margin-bottom: 10px; /* Space below the position text */
+}
+
+/* Small underline for emphasis (used elsewhere if needed) */
+.underline {
+    height: 2px; /* Thin underline */
+    width: 30px; /* Small width for the underline */
+    background-color: #7cb342; /* Green color matching the theme */
+    margin: 0 auto; /* Centers the underline */
+}
+
+/* Contact Section Styling */
+.contact {
+    background-color: #4F4F4F; /* Dark grey background to match previous styles */
+    padding: 40px 20px;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+}
+
+/* Contact Section Styling */
+
+/* Styling for the h2 header in the contact section */
+.contact h2 {
+    font-size: 32px; /* Large font size for the heading */
+    color: #4F4F4F; /* Dark gray text color */
+    margin-bottom: 30px; /* Space below the heading */
+}
+
+/* Container for the contact form to limit its width */
+.contact .container {
+    max-width: 800px; /* Maximum width of the form container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Flexbox layout for the form to stack inputs vertically */
+.contact form {
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks items vertically */
+    gap: 15px; /* Adds space between form fields */
+}
+
+/* Styling for text and email input fields, and the textarea */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%; /* Makes the input fields full width */
+    padding: 15px; /* Padding inside the inputs */
+    border: 2px solid #916868; /* Border color matching the accent color */
+    border-radius: 8px; /* Rounded corners for smoother design */
+    font-size: 16px; /* Standard font size for input text */
+    color: #333; /* Dark gray text color inside inputs */
+    background-color: #f0f0f0; /* Light gray background for inputs */
+    transition: border-color 0.3s ease; /* Smooth transition for border on focus */
+}
+
+/* Focus state for inputs (text, email, textarea) */
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+    border-color: #FFD700; /* Changes border color to gold on focus */
+    outline: none; /* Removes the default outline on focus */
+}
+
+/* Additional styling for the textarea */
+.contact textarea {
+    height: 150px; /* Fixed height for the textarea */
+    resize: vertical; /* Allows vertical resizing of the textarea */
+}
+
+/* Styling for error messages inside the form */
+.contact .error-message {
+    color: #FFD700; /* Gold color for error messages to stand out */
+    font-size: 14px; /* Smaller font size for error messages */
+    text-align: left; /* Aligns error messages to the left */
+}
+
+/* Styling for the submit button */
+.contact button {
+    padding: 15px; /* Padding inside the button */
+    background-color: #FFD700; /* Gold background color for the button */
+    border: none; /* Removes the button's border */
+    border-radius: 8px; /* Rounded corners for the button */
+    color: #4F4F4F; /* Dark gray text color */
+    font-size: 18px; /* Larger font size for the button text */
+    font-weight: bold; /* Makes the button text bold */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the submit button */
+.contact button:hover {
+    background-color: #916868; /* Changes background color to the accent color */
+    color: #fff; /* Changes text color to white */
+}
+
+.social-media {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-media p {
+    font-size: 18px;
+    color: #4F4F4F;
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    font-size: 18px;
+    color: #916868; /* Accent color for the links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+.social-icon i {
+    margin-right: 5px;
+    font-size: 20px; /* Icon size */
+}
+
+
+/* Footer Section Styling */
+
+/* Basic footer styling */
+footer {
+    background: #4F4F4F; /* Dark gray background for the footer */
+    color: #fff; /* White text color in the footer */
+    text-align: center; /* Centers the footer content */
+    padding: 10px 0; /* Adds padding inside the footer */
+}
+
+/* Smooth scrolling effect for the entire HTML document */
+html {
+    scroll-behavior: smooth; /* Smooth scroll when navigating to anchor links */
+}
+
+/* Adjust scroll margin for sections to ensure smooth navigation */
+section {
+    scroll-margin-top: 70px; /* Offsets the scroll position to account for a fixed header */
+}
+
+/* Additional footer styling */
+footer {
+    background: #4F4F4F; /* Dark gray background (repeated for clarity) */
+    color: #fff; /* White text (repeated for clarity) */
+    text-align: center; /* Centers the footer content */
+    padding: 20px; /* More padding for the footer */
+    margin-top: 50px; /* Space above the footer */
+}
+
+/* Footer paragraph text styling */
+footer p {
+    font-size: 16px; /* Standard font size for footer text */
+}
+
+/* For tablets (widths between 768px and 1024px) */
+@media (min-width: 768px) {
+    .logo img {
+        height: 40px; /* Reduce logo size for medium screens */
+    }
+
+    .main-nav {
+        display: flex; /* Show navigation as a flex container */
+        flex-direction: row; /* Align links horizontally */
+        gap: 15px; /* Add spacing between links */
+    }
+
+    .breadcrumb-icon {
+        display: none; /* Hide breadcrumb icon on desktop */
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav ul li {
+        margin: 0 8px; /* Adjust spacing between nav items */
+    }
+
+    .hero {
+        flex-direction: column; /* Stack text and image vertically */
+        height: auto; /* Allow auto height for hero section */
+    }
+
+    .text-content {
+        text-align: center; /* Center-align text on smaller screens */
+        padding: 20px;
+    }
+
+    .text-content h1 {
+        font-size: 40px; /* Adjust heading font size */
+    }
+
+    .text-content p {
+        font-size: 24px; /* Adjust paragraph font size */
+    }
+
+    .image-container {
+        height: 300px; /* Set fixed height for image container */
+    }
+
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        padding: 30px 10px;
+    }
+
+    .con-1, .con-2 {
+        margin-bottom: 20px; /* Add space between stacked sections */
+    }
+
+    .about-section {
+        flex-direction: column; /* Stack mission and vision vertically */
+        gap: 30px; /* Increase gap for vertical stacking */
+        align-items: center;
+    }
+
+    .mission, .vision {
+        padding: 15px;
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .mission h3, .vision h3 {
+        font-size: 24px; /* Adjust heading font size */
+    }
+
+    .mission p, .vision p {
+        font-size: 14px; /* Adjust paragraph font size */
+    }
+
+    .about-3 h2 {
+        font-size: 28px; /* Adjust third section heading */
+    }
+
+    .about-3 h3 {
+        font-size: 24px; /* Adjust third section sub-heading */
+    }
+
+    .core-value {
+        flex-direction: column; /* Stack core values vertically */
+        text-align: center;
+    }
+
+    .core-value h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .core-value span {
+        font-size: 16px;
+    }
+
+    .services-table h3 {
+        font-size: 22px; /* Slightly smaller header for tablets */
+    }
+
+    .services-table th, .services-table td {
+        padding: 15px; /* Adjust padding for tablet screen */
+    }
+
+    .services-table table {
+        font-size: 16px; /* Medium font size for readability */
+    }
+
+    .team-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px; /* Increase gap for better spacing */
+    }
+
+    .team-member {
+        width: 20%; /* Make cards take up more space on smaller screens */
+    }
+
+    .contact .container {
+        max-width: 600px; /* Reduce max-width of form container */
+    }
+}
+
+
+/* Mobile View - Navbar appears below breadcrumb icon */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: row; /* Stack logo and nav vertically */
+        align-items: center;
+    }
+
+    .breadcrumb-icon {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Mobile navigation - hide by default */
+    .main-nav {
+        display: none;
+        width: 100%;
+        background-color: #333; /* Mobile-specific background */
+    }
+
+    /* Position the nav below the hamburger on mobile */
+    .header {
+        position: relative;
+    }
+
+    .main-nav li {
+        margin: 10px 0; /* Vertical spacing on mobile */
+    }
+
+    .main-nav a {
+        color: #fff;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .main-nav a:hover {
+        text-decoration: underline;
+    }
+
+    .logo img {
+        height: 35px; /* Further reduce logo size */
+    }
+
+    .text-content h1 {
+        font-size: 35px; /* Adjust font size for mobile */
+    }
+
+    .text-content p {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 20px 10px; /* Reduce padding for smaller screens */
+    }
+
+    .con-1, .con-2 {
+        padding: 20px;
+    }
+
+    .con-1 h2, .con-2 h2 {
+        font-size: 24px; /* Smaller headings */
+    }
+
+    .con-1 p, .con-2 p {
+        font-size: 16px;
+    }
+
+    .about-2 h2 {
+        font-size: 28px; /* Adjust about section heading */
+    }
+
+    .about-section {
+        gap: 20px; /* Reduce gap between sections */
+    }
+
+    .mission h3, .vision h3 {
+        font-size: 22px; /* Adjust heading font size */
+    }
+
+    .mission p, .vision p {
+        font-size: 14px;
+    }
+
+    .about-3 h2 {
+        font-size: 24px; /* Adjust third section heading */
+    }
+
+    .about-3 h3 {
+        font-size: 20px; /* Adjust third section sub-heading */
+    }
+
+    .core-value {
+        padding: 10px;
+    }
+
+    .core-value h4 {
+        font-size: 18px;
+    }
+
+    .core-value span {
+        font-size: 14px;
+    }
+
+    .services-table h3 {
+        font-size: 20px; /* Reduce the font size of the header */
+        margin-bottom: 10px; /* Decrease bottom margin */
+    }
+
+    .services-table th, .services-table td {
+        padding: 7px; /* Decrease padding inside table cells */
+    }
+
+    .services-table ul {
+        padding-left: 15px; /* Adjust padding of the list */
+    }
+
+    .services-table table {
+        font-size: 14px; /* Reduce font size for better mobile display */
+    }
+
+    .team-member {
+        width: 100%; /* Full-width for mobile */
+    }
+
+    .contact h2 {
+        font-size: 28px; /* Smaller font size for header */
+    }
+
+    .contact input[type="text"],
+    .contact input[type="email"],
+    .contact textarea {
+        padding: 10px; /* Reduce padding for form inputs */
+        font-size: 14px; /* Smaller font for input text */
+    }
+
+    .contact button {
+        font-size: 16px; /* Reduce button text size */
+        padding: 12px; /* Adjust padding */
+    }
+
+    footer p {
+        font-size: 14px; /* Smaller font size in footer */
+    }
+
+    .social-media p {
+        font-size: 16px; /* Smaller font size for social media section */
+    }
+}
+
+/* For small mobile devices (widths less than 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 5px; /* Reduce padding */
+    }
+
+    .logo img {
+        height: 30px; /* Even smaller logo size */
+    }
+
+    nav ul li {
+        margin: 3px 0; /* Less margin between links */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Reduce font size for navigation links */
+    }
+
+    .text-content {
+        padding: 15px;
+    }
+
+    .text-content h1 {
+        font-size: 28px;
+    }
+
+    .text-content p {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 15px 5px;
+    }
+
+    .con-1, .con-2 {
+        padding: 15px;
+    }
+
+    .con-1 h2, .con-2 h2 {
+        font-size: 20px;
+    }
+
+    .con-1 p, .con-2 p {
+        font-size: 14px;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+
+    .about-2 h2 {
+        font-size: 24px; /* Adjust about section heading */
+    }
+
+    .mission, .vision {
+        padding: 10px;
+    }
+
+    .mission h3, .vision h3 {
+        font-size: 20px; /* Adjust heading font size */
+    }
+
+    .mission p, .vision p {
+        font-size: 12px;
+    }
+
+    .about-3 h2 {
+        font-size: 20px; /* Adjust third section heading */
+    }
+
+    .about-3 h3 {
+        font-size: 18px; /* Adjust third section sub-heading */
+    }
+
+    .core-value {
+        padding: 5px;
+    }
+
+    .core-value h4 {
+        font-size: 16px; /* Adjust core value heading */
+    }
+
+    .core-value span {
+        font-size: 12px; /* Adjust core value description */
+    }
+
+    .services-table h3 {
+        font-size: 18px; /* Smaller header text */
+    }
+
+    .services-table th, .services-table td {
+        padding: 8px; /* Even smaller padding for tiny screens */
+    }
+
+    .services-table table {
+        font-size: 12px; /* Smallest font size for readability on phones */
+    }
+
+    .services-table ul {
+        padding-left: 10px; /* Less padding for small screens */
+    }
+
+    .contact .container {
+        max-width: 100%; /* Full width for form container */
+    }
+
+    .contact input[type="text"],
+    .contact input[type="email"],
+    .contact textarea {
+        padding: 8px; /* Smaller padding */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .contact button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Reduce gap between members */
+    }
+}
+
+

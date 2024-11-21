@@ -1,8 +1,17 @@
 /* General reset for margin, padding, and box-sizing for all elements */
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    margin: 0;
+    padding: 0;
 }
 
 /* Basic body styling */
@@ -894,6 +903,7 @@ footer p {
 
     .team-member {
         width: 20%; /* Make cards take up more space on smaller screens */
+
     }
 
     .contact .container {
@@ -1050,37 +1060,56 @@ footer p {
 }
 
 /* For small mobile devices (widths less than 480px) */
-@media (max-width: 480px) {
-    header {
-        padding: 10px 5px; /* Reduce padding */
+@media screen and (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center;
+    }
+
+    .breadcrumb-icon {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Mobile navigation - hide by default */
+    .main-nav {
+        display: none;
+        width: 100%;
+        background-color: #333; /* Mobile-specific background */
+    }
+
+    /* Position the nav below the hamburger on mobile */
+    .header {
+        position: relative;
+    }
+
+    .main-nav li {
+        margin: 8px 0; /* Vertical spacing on mobile */
+    }
+
+    .main-nav a {
+        color: #fff;
+        font-size: 16px; /* Smaller font size */
+        padding: 12px;
+    }
+
+    .main-nav a:hover {
+        text-decoration: underline;
     }
 
     .logo img {
-        height: 30px; /* Even smaller logo size */
-    }
-
-    nav ul li {
-        margin: 3px 0; /* Less margin between links */
-    }
-
-    nav ul li a {
-        font-size: 14px; /* Reduce font size for navigation links */
-    }
-
-    .text-content {
-        padding: 15px;
+        height: 30px; /* Further reduce logo size */
     }
 
     .text-content h1 {
-        font-size: 28px;
+        font-size: 28px; /* Adjust font size for mobile */
     }
 
     .text-content p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .container {
-        padding: 15px 5px;
+        padding: 15px 8px; /* Reduce padding for smaller screens */
     }
 
     .con-1, .con-2 {
@@ -1088,27 +1117,23 @@ footer p {
     }
 
     .con-1 h2, .con-2 h2 {
-        font-size: 20px;
+        font-size: 20px; /* Smaller headings */
     }
 
     .con-1 p, .con-2 p {
         font-size: 14px;
     }
 
-    .image-container {
-        height: 200px;
-    }
-
     .about-2 h2 {
-        font-size: 24px; /* Adjust about section heading */
+        font-size: 22px; /* Adjust about section heading */
     }
 
-    .mission, .vision {
-        padding: 10px;
+    .about-section {
+        gap: 15px; /* Reduce gap between sections */
     }
 
     .mission h3, .vision h3 {
-        font-size: 20px; /* Adjust heading font size */
+        font-size: 18px; /* Adjust heading font size */
     }
 
     .mission p, .vision p {
@@ -1124,57 +1149,71 @@ footer p {
     }
 
     .core-value {
-        padding: 5px;
+        padding: 8px;
     }
 
     .core-value h4 {
-        font-size: 16px; /* Adjust core value heading */
+        font-size: 16px;
     }
 
     .core-value span {
-        font-size: 12px; /* Adjust core value description */
+        font-size: 12px;
     }
 
     .services-table h3 {
-        font-size: 18px; /* Smaller header text */
+        font-size: 18px; /* Reduce the font size of the header */
+        margin-bottom: 8px; /* Decrease bottom margin */
     }
 
     .services-table th, .services-table td {
-        padding: 8px; /* Even smaller padding for tiny screens */
-    }
-
-    .services-table table {
-        font-size: 12px; /* Smallest font size for readability on phones */
+        padding: 6px; /* Decrease padding inside table cells */
     }
 
     .services-table ul {
-        padding-left: 10px; /* Less padding for small screens */
+        padding-left: 10px; /* Adjust padding of the list */
     }
 
-    .contact .container {
-        max-width: 100%; /* Full width for form container */
+    .services-table table {
+        font-size: 12px; /* Reduce font size for better mobile display */
+    }
+
+    .team-member {
+        width: 100%; /* Full-width for mobile */
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .team-member img {
+        width: 80%; /* Adjust image size */
+        height: auto;
+    }
+
+    .contact h2 {
+        font-size: 24px; /* Smaller font size for header */
     }
 
     .contact input[type="text"],
     .contact input[type="email"],
     .contact textarea {
-        padding: 8px; /* Smaller padding */
-        font-size: 12px; /* Smaller font size */
+        padding: 8px; /* Reduce padding for form inputs */
+        font-size: 12px; /* Smaller font for input text */
     }
 
     .contact button {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 14px; /* Reduce button text size */
+        padding: 10px; /* Adjust padding */
     }
 
     footer p {
-        font-size: 12px; /* Smaller font size */
+        font-size: 12px; /* Smaller font size in footer */
     }
 
-    .team-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; /* Reduce gap between members */
+    .social-media p {
+        font-size: 14px; /* Smaller font size for social media section */
+    }
+
+    .social-icon {
+        font-size: 18px; /* Smaller social media icon size */
     }
 }
 
